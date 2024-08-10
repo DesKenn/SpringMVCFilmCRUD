@@ -1,7 +1,9 @@
 package com.skilldistillery.film.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 
 public class Film {
 	private int id;
@@ -17,6 +19,8 @@ public class Film {
 	private String specialFeatures;
 	private String language;
 	private List<Actor> actors;
+	List<Film> films = new ArrayList<>();
+
 	
 	public Film() {}
 	
@@ -148,6 +152,14 @@ public class Film {
 
 	public void setActors(List<Actor> actors) {
 		this.actors = actors;
+	}
+
+	public List<Film> getFilms() {
+		return films;
+	}
+
+	public void setFilms(List<Film> films) {
+		this.films = films;
 	}
 
 	@Override

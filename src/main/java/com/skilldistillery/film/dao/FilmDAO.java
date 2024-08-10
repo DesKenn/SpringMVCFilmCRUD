@@ -1,5 +1,6 @@
 package com.skilldistillery.film.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.skilldistillery.film.entities.Actor;
@@ -10,6 +11,7 @@ public interface FilmDAO {
 	  public List<Film> findFilmsByKeyword(String keyword);
 	  public Actor findActorById(int actorId);
 	  public List<Actor> findActorsByFilmId(int filmId);
-	  public void addFilm(Film newFilm);
-	  public boolean deleteFilmById(Film filmToDelete);
+	  public Film addFilm(Film newFilm);
+	  public boolean deleteFilmById(Film film)throws SQLException, ClassNotFoundException;
+	  public boolean updateFilmById(Film film)throws SQLException, ClassNotFoundException;
 }
