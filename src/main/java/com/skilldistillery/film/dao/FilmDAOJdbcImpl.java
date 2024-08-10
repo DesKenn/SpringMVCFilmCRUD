@@ -185,7 +185,6 @@ public class FilmDAOJdbcImpl implements FilmDAO {
 		return newFilm;
 	}
 
-
 	@Override
 	public boolean deleteFilmById(Film film) throws SQLException, ClassNotFoundException {
 
@@ -218,7 +217,7 @@ public class FilmDAOJdbcImpl implements FilmDAO {
 	}
 
 	@Override
-	public boolean updateFilmById(Film film) throws SQLException, ClassNotFoundException {
+	public Film updateFilmById(Film film) throws SQLException, ClassNotFoundException {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
@@ -253,10 +252,9 @@ public class FilmDAOJdbcImpl implements FilmDAO {
 				catch (SQLException sqle2) {
 					System.err.println("Error trying to rollback");
 				}
+				return film;
 			}
-			return false;
 		}
-		return true;
+		return film;
 	}
-
 }

@@ -13,5 +13,5 @@ public interface FilmDAO {
 	  public List<Actor> findActorsByFilmId(int filmId);
 	  public Film addFilm(Film newFilm);
 	  public boolean deleteFilmById(Film film)throws SQLException, ClassNotFoundException;
-	  public boolean updateFilmById(Film film)throws SQLException, ClassNotFoundException;
+	  public Film updateFilmById(Film film)throws SQLException, ClassNotFoundException;
 }
