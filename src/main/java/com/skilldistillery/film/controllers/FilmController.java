@@ -21,7 +21,7 @@ public class FilmController {
 	@Autowired
 	private FilmDAO filmDAO;
 
-	@RequestMapping("index.do")
+	@RequestMapping(path={"index.do", "/"})
 	public String index() {
 		return "WEB-INF/index.jsp";
 	}
@@ -102,7 +102,7 @@ public class FilmController {
 		return mv;
 	}
 
-	@RequestMapping("index.do")
+	@RequestMapping(path="index.do", params="searchTerm")
 	public ModelAndView searchFilm(@RequestParam("searchTerm") String keyword) {
 		ModelAndView mv = new ModelAndView();
 		List<Film> films = new ArrayList<>();
