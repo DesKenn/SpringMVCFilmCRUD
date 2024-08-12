@@ -47,7 +47,7 @@ public class FilmController {
 		return mv;
 	}
 
-	@RequestMapping(path = "index.do", method = RequestMethod.POST)
+	@RequestMapping(path = "createFilm.do", method = RequestMethod.POST)
 	public ModelAndView createFilm(Film film) {
 		ModelAndView mv = new ModelAndView();
 
@@ -58,12 +58,12 @@ public class FilmController {
 			mv.addObject("ERROR, cannot add a new film.");
 		}
 
-		mv.setViewName("/WEB-INF/index.jsp");
+		mv.setViewName("result.jsp");
 
 		return mv;
 	}
 
-	@RequestMapping("index.do")
+	@RequestMapping("deleteFilm.do")
 	public ModelAndView deleteFilm(@RequestParam("filmId") int id) throws ClassNotFoundException, SQLException {
 		ModelAndView mv = new ModelAndView();
 		boolean filmDeleted;
@@ -81,12 +81,12 @@ public class FilmController {
 		} else {
 			mv.addObject("ERROR! Film has not been deleted.");
 		}
-		mv.setViewName("/WEB-INF/index.jsp");
+		mv.setViewName("deleteFilm.jsp");
 
 		return mv;
 	}
 
-	@RequestMapping(path = "index.do", method = RequestMethod.POST)
+	@RequestMapping(path = "updateFilm.do", method = RequestMethod.POST)
 	public ModelAndView updateFilm(@ModelAttribute("film") Film film) throws ClassNotFoundException, SQLException {
 		ModelAndView mv = new ModelAndView();
 		Film updatedFilm;
@@ -97,7 +97,7 @@ public class FilmController {
 		} else {
 			mv.addObject("ERROR! Film not updated.");
 		}
-		mv.setViewName("/WEB-INF/index.jsp");
+		mv.setViewName("result.jsp");
 
 		return mv;
 	}
@@ -109,7 +109,7 @@ public class FilmController {
 
 		films = filmDAO.findFilmsByKeyword(keyword);
 		mv.addObject("searchResults", films);
-		mv.setViewName("/WEB-INF/resuslt.jsp");
+		mv.setViewName("result.jsp");
 		return mv;
 
 	}
