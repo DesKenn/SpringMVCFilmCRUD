@@ -109,7 +109,7 @@ public class FilmController {
 
 		films = filmDAO.findFilmsByKeyword(keyword);
 		mv.addObject("searchResults", films);
-		mv.setViewName("result.jsp");
+		mv.setViewName("index.jsp");
 		return mv;
 
 	}

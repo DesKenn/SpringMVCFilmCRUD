@@ -10,7 +10,7 @@
 	<h3>You have deleted the film</h3>
 
 	<form action="index.do" method="GET">
-		<input type="submit" value="Home">
+		<input type="submit" value="Main page">
 	</form>
 </body>
 </html>

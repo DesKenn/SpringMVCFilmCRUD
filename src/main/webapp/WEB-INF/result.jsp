@@ -40,7 +40,7 @@
 		</p>
 
 		<form action="index.do" method="GET">
-			<input type="submit" value="Home">
+			<input type="submit" value="Main page">
 		</form>
 	</c:forEach>
 </body>

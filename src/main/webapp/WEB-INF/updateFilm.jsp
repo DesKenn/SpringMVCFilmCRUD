@@ -48,7 +48,7 @@
 		<input type="submit" value="Save Changes">
 	</form:form>
 	<form action="index.do" method="GET">
-		<input type="submit" value="Home">
+		<input type="submit" value="Main page">
 	</form>
 
 </body>

@@ -54,8 +54,8 @@
 
 				<input type="submit" value="Add Film">
 		</form:form>
-				<form action="home.do" method="GET">
-			<input type="submit" value="Home">
+				<form action="index.do" method="GET">
+			<input type="submit" value="Main page">
 		</form>
 
 </body>
